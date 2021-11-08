@@ -9,5 +9,3 @@ print(test1)
 test2 = "test"
 
 print(test2)
-
-123
