@@ -7,5 +7,3 @@ def test_item(browser):
     browser.get(link)
     time.sleep(30)
     assert browser.find_element(By.CSS_SELECTOR, ".btn.btn-add-to-basket"), "No have Add button"
-
-

@@ -15,7 +15,3 @@ def browser(request):
     browser.implicitly_wait(5)
     yield browser
     browser.quit()
-
-
-
-
