@@ -1,5 +1,13 @@
-def test_get_issues(jira_test):
-    print()
+from jira_client import x
+from config import PROJECT_NM
+
+expected_tasks = ['DYO-1', 'DYO-2', 'DYO-4', 'DYO-5', 'DYO-6', 'DYO-7', 'DYO-8', 'DYO-9']
+
+
+#print(get_tasks)
+
+assert expected_tasks == x.get_tasks(PROJECT_NM)
+
 
 # Протестировать Jira с использованием pytest
 #

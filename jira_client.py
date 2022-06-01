@@ -2,16 +2,19 @@ from jira import JIRA
 from requests_toolbelt import user_agent
 from config import JIRA_EP, EMAIL, TOKEN, PROJECT_NM
 
-jira = JIRA(JIRA_EP,
-                basic_auth=(EMAIL, TOKEN),
-                options={"headers": {"User-Agent": user_agent("my_package", "0.0.1")}}
-                )
+class AuthJira:
+    def __init__(self, a, b, c):
+        self.endp = a
+        self.email = b
+        self.token = c
+        self.jira = JIRA(a, basic_auth=(b, c))
 
-class JiraAuth():
-    def get_jira_tasks(self):
-        issues = jira.search_issues(self)
-        for x in range(len(issues)):
-            print(issues[x])
+    def get_tasks(self, w):
+        issues = self.jira.search_issues(w)
+        for y in range(len(issues)):
+            print(issues[y])
 
 
+x = AuthJira(JIRA_EP, EMAIL, TOKEN)
 
+print(x.get_tasks(PROJECT_NM))
