@@ -1,21 +1,11 @@
-from jira_client import x
 from config import PROJECT_NM
 
-expected_tasks = ['DYO-1', 'DYO-2', 'DYO-4', 'DYO-5', 'DYO-6', 'DYO-7', 'DYO-8', 'DYO-9']
 
+expected_tasks = ['DYO-9', 'DYO-8', 'DYO-7', 'DYO-6', 'DYO-5', 'DYO-4', 'DYO-2', 'DYO-1']
 
-#print(get_tasks)
+#передаем в функцию авторизации jira_auth из conftest
+def test_get_issues(jira_auth):
+    jira = jira_auth
+    actual_tasks = jira.get_tasks(PROJECT_NM)
 
-assert expected_tasks == x.get_tasks(PROJECT_NM)
-
-
-# Протестировать Jira с использованием pytest
-#
-# +1.Файл jira_auth.py который ты писал нужно преобразовать в jira_client.py
-#   +- Внутри нужно создать класс, который будет хранить в себе методы работы с jira
-# +2.Нужно создать директорию tests в которой уже непосредственно будут лежать тесты
-# 3.Создать conftest.py и реализовать в нем фикстуру которая будет возвращать класс из пункта 1.
-# 4.Написать тест на то ожидаемые возвращаемые значения из jira
-#   -Используй фикстуру из пункта 3
-#   -Сделай запрос который возвращает задачи из jira
-#   -Сделай проверку что пришли те задачи которые нужно, по названию или по тегу
+    assert expected_tasks == actual_tasks, "test failed!"
