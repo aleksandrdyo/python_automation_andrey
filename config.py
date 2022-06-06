@@ -1,4 +1,4 @@
-JIRA_EP = "https://dyo999.atlassian.net/"
+JIRA_ENDPOINT = "https://dyo999.atlassian.net/"
 EMAIL = "dyoalex@gmail.com"
-TOKEN = "FBN0hu6NaKA1aS8TtRSFADE7"
-PROJECT_NM = 'project = dyo'
+TOKEN = "RVmiFcu6n2Q1WrsJcuUDE761999"
+PROJECT_NAME = 'project = dyo'
